@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#fbf9f3">
+  <meta name="description" content="长出想念：选择一颗糖，然后轻轻捏动它。">
+  <title>长出想念 · 互动原型</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <main class="app-shell">
+    <div class="ambient ambient-a"></div><div class="ambient ambient-b"></div>
+    <div class="phone-app">
+      <header class="topbar">
+        <button id="backBtn" class="icon-btn" aria-label="返回上一页" hidden>‹</button>
+        <div class="brand"><span class="brand-mark">✦</span> 长出想念 <span class="brand-dot">·</span> <small>一颗糖的诞生</small></div>
+        <span class="topbar-end" aria-hidden="true">···</span>
+      </header>
+
+      <div class="progress" aria-label="制作进度"><span class="progress-track"><span id="progressFill"></span></span><span id="progressText">01 / 03</span></div>
+
+      <section id="pageShape" class="page active" aria-labelledby="shapeTitle">
+        <div class="intro"><div class="eyebrow">STEP 01 · 勾勒轮廓</div><h1 id="shapeTitle">想念，是什么形状？</h1><p>先为这颗糖，选一个柔软的模样。</p></div>
+        <div class="preview-card"><span class="preview-caption">此刻的糖果</span><canvas id="previewCanvas" aria-label="糖果外形与颜色预览"></canvas><span class="preview-hint">每一种形状，都装得下想念</span></div>
+        <div class="selection-group"><div class="group-head"><h2>选择外形</h2><span>01 / 02</span></div><div id="shapeOptions" class="option-grid shape-grid"></div></div>
+        <div class="selection-group"><div class="group-head"><h2>选择颜色</h2><span>02 / 02</span></div><div id="colorOptions" class="option-grid color-grid"></div></div>
+        <button id="toPersonality" class="primary-btn">下一步 · 赋予性格 <span>↗</span></button>
+      </section>
+
+      <section id="pagePersonality" class="page" aria-labelledby="personalityTitle" hidden>
+        <div class="intro"><div class="eyebrow">STEP 02 · 赋予性格</div><h1 id="personalityTitle">它会怎样回应你？</h1><p>不同性格，藏着不同的柔软和回弹。</p></div>
+        <div class="preview-card preview-card-small"><span class="preview-caption">你的想念糖果</span><canvas id="personalityCanvas" aria-label="已选择的糖果预览"></canvas><span id="selectionSummary" class="preview-hint"></span></div>
+        <div class="selection-group"><div class="group-head"><h2>选择性格</h2><span>轻触一种感觉</span></div><div id="personalityOptions" class="personality-options"></div></div>
+        <button id="generateBtn" class="primary-btn">生成我的想念糖果 <span>✦</span></button>
+        <p class="footnote">这是由预设规则生成的互动原型</p>
+      </section>
+
+      <section id="pageSquish" class="page squish-page" aria-labelledby="squishTitle" hidden>
+        <div class="intro squish-intro"><div class="eyebrow">STEP 03 · 揉捏想念</div><h1 id="squishTitle">把想念，握在手心。</h1><p id="squishSubtitle">轻轻碰它，看看它怎样回应你。</p></div>
+        <div class="squish-stage"><div class="stage-glow"></div><canvas id="squishCanvas" aria-label="可按压、拖动和拉伸的糖果"></canvas><span class="stage-caption">一颗会回应你的糖</span></div>
+        <div class="gesture-card"><span class="gesture-icon">⌁</span><p>直接拖动，查看不同的立体角度<br>轻点或长按揉捏 · 双指扭转或伸缩</p></div>
+        <div class="action-row"><button id="resetBtn" class="secondary-btn">↺ &nbsp;恢复原样</button><button id="reselectBtn" class="secondary-btn">重新选择 &nbsp;↗</button></div>
+        <p class="footnote">长按后再拖动可以拉扯局部 · 电脑按 Shift 拖动绕 Z 轴</p>
+      </section>
+
+      <div id="generating" class="generating" hidden><div class="generating-orb"></div><span>正在让想念慢慢聚成一颗糖…</span></div>
+    </div>
+  </main>
+  <script src="./app.js"></script>
+<script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a52b83c60de0a8f2',t:'MTc5MzM3NDc4Nw=='};var l=window.parent.location,o;try{o=new URL(l.origin).origin}catch(e){try{o=new URL(new URL(l.href).origin).origin}catch(e){o=''}}var u='/cdn-cgi/challenge-platform/scripts/jsd/main.js?ray=a52b83c60de0a8f2',a=document.createElement('script');a.src=o?new URL(u,o).href:u;document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
